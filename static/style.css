@@ -1,25 +1,26 @@
 body {
-    background-image:'AdobeStock_778852821_Preview.jpg'; /* Replace 'background.jpg' with your background image */
+    background-image: url('images/photo.jpg');
     background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    color: white;
-    font-family: Arial, sans-serif;
-    padding: 20px;
+    font-family: Arial, sans-serif; /* فونت اصلی */
+    color: #333; /* رنگ متن اصلی */
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    background-color: rgba(0, 0, 50, 0.8); /* پس زمینه نیمه شفاف */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Drop shadow effect */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* افکت سایه */
 }
 
 h1 {
     font-size: 2em;
     text-align: center;
     margin-bottom: 20px;
+    color: #3498db; /* رنگ عنوان اصلی */
 }
 
 form {
@@ -29,6 +30,7 @@ form {
 label {
     display: block;
     margin-bottom: 10px;
+    color: #2980b9; /* رنگ برچسب‌ها */
 }
 
 input[type="text"] {
@@ -41,7 +43,7 @@ input[type="text"] {
 }
 
 button {
-    background-color: #4CAF50;
+    background-color: #3498db; /* رنگ دکمه‌ها */
     color: white;
     border: none;
     padding: 10px 20px;
@@ -51,12 +53,12 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #2980b9; /* رنگ هاور دکمه‌ها */
 }
 
 .weather-info {
     margin-top: 20px;
-    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background for weather info */
+    background-color: rgba(52, 152, 219, 0.2); /* پس زمینه نیمه شفاف برای اطلاعات آب و هوا */
     padding: 15px;
     border-radius: 5px;
 }
@@ -64,14 +66,16 @@ button:hover {
 .weather-info h2 {
     font-size: 1.5em;
     margin-bottom: 10px;
+    color: #3498db; /* رنگ عنوان اطلاعات آب و هوا */
 }
 
 .weather-info p {
     font-size: 1.2em;
     margin-bottom: 5px;
+    color: #333; /* رنگ متن اطلاعات آب و هوا */
 }
 
 .error-message {
-    color: #ff3333;
+    color: #ff3333; /* رنگ پیام خطا */
     font-size: 1.2em;
 }
