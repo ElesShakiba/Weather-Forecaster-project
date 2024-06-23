@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #e0f7fa; /* رنگ پس‌زمینه اصلی */
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3498db; /* رنگ عنوان اصلی */
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2980b9; /* رنگ برچسب‌ها */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #3498db; /* رنگ دکمه‌ها */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #2980b9; /* رنگ هاور دکمه‌ها */
+}
+
+.weather-info {
+    margin-top: 20px;
+    background-color: rgba(52, 152, 219, 0.2); /* پس زمینه نیمه شفاف برای اطلاعات آب و هوا */
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.weather-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #3498db; /* رنگ عنوان اطلاعات آب و هوا */
+}
+
+.weather-info p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #333; /* رنگ متن اطلاعات آب و هوا */
+}
+
+.error-message {
+    color: #ff3333; /* رنگ پیام خطا */
+    font-size: 1.2em;
+}
