@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
+    <!-- Link to Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Weather App</h1>
     <form method="POST">
-        <label for="city">Enter city name:</label>
+        <label for="city"><i class="fas fa-map-marker-alt"></i> Enter city name:</label>
         <input type="text" id="city" name="city" required>
-        <button type="submit">Get Weather</button>
+        <button type="submit"><i class="fas fa-cloud-sun"></i> Get Weather</button>
     </form>
     
     {% if weather %}
@@ -20,7 +24,7 @@
         <p>Humidity: {{ weather.humidity }}%</p>
         <p>Wind Speed: {{ weather.wind_speed }} m/s</p>
     {% elif error %}
-        <p style="color: red;">Error: {{ error }}</p>
+        <p class="error-message"><i class="fas fa-exclamation-triangle"></i> Error: {{ error }}</p>
     {% endif %}
 </body>
 </html>

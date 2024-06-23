@@ -1,0 +1,77 @@
+body {
+    background-image:'AdobeStock_778852821_Preview.jpg'; /* Replace 'background.jpg' with your background image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Drop shadow effect */
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.weather-info {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background for weather info */
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.weather-info h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.weather-info p {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.error-message {
+    color: #ff3333;
+    font-size: 1.2em;
+}
