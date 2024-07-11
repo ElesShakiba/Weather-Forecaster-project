@@ -3,27 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
+    <title>Weather Comparison App</title>
     <!-- Link to Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Link to your custom CSS file -->
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-    <h1>Weather App</h1>
+    <h1>Weather Comparison App</h1>
     <form method="POST">
-        <label for="city"><i class="fas fa-map-marker-alt"></i> Enter city name:</label>
-        <input type="text" id="city" name="city" required>
+        <label for="city1"><i class="fas fa-map-marker-alt"></i> Enter first city name:</label>
+        <input type="text" id="city1" name="city1" required>
+        <br>
+        <label for="city2"><i class="fas fa-map-marker-alt"></i> Enter second city name:</label>
+        <input type="text" id="city2" name="city2" required>
+        <br>
         <button type="submit"><i class="fas fa-cloud-sun"></i> Get Weather</button>
     </form>
     
     {% if weather %}
-        <div class="weather-info">
-            <h2>Weather in {{ weather.city }}:</h2>
-            <p><i class="fas fa-cloud-sun"></i> Description: {{ weather.description }}</p>
-            <p><i class="fas fa-thermometer-half"></i> Temperature: {{ weather.temperature }}°C</p>
-            <p><i class="fas fa-tint"></i> Humidity: {{ weather.humidity }}%</p>
-            <p><i class="fas fa-wind"></i> Wind Speed: {{ weather.wind_speed }} m/s</p>
+        <div class="weather-comparison">
+            <div class="city-weather">
+                <h2>Weather in {{ weather.city1.name }}:</h2>
+                <p><i class="fas fa-cloud-sun"></i> Description: {{ weather.city1.description }}</p>
+                <p><i class="fas fa-thermometer-half"></i> Temperature: {{ weather.city1.temperature }}°C</p>
+                <p><i class="fas fa-tint"></i> Humidity: {{ weather.city1.humidity }}%</p>
+                <p><i class="fas fa-wind"></i> Wind Speed: {{ weather.city1.wind_speed }} m/s</p>
+            </div>
+            <div class="city-weather">
+                <h2>Weather in {{ weather.city2.name }}:</h2>
+                <p><i class="fas fa-cloud-sun"></i> Description: {{ weather.city2.description }}</p>
+                <p><i class="fas fa-thermometer-half"></i> Temperature: {{ weather.city2.temperature }}°C</p>
+                <p><i class="fas fa-tint"></i> Humidity: {{ weather.city2.humidity }}%</p>
+                <p><i class="fas fa-wind"></i> Wind Speed: {{ weather.city2.wind_speed }} m/s</p>
+            </div>
         </div>
     {% elif error %}
         <p class="error-message"><i class="fas fa-exclamation-triangle"></i> Error: {{ error }}</p>

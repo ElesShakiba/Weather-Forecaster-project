@@ -1,69 +1,124 @@
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #e0f7fa; /* رنگ پس‌زمینه اصلی */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Comparison App</title>
+    <!-- Link to Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Link to your custom CSS file -->
+    <link rel="stylesheet" href="static/styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            background-color: #e0f7fa; /* رنگ پس‌زمینه اصلی */
+        }
 
-h1 {
-    font-size: 2em;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #3498db; /* رنگ عنوان اصلی */
-}
+        h1 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #3498db; /* رنگ عنوان اصلی */
+        }
 
-form {
-    text-align: center;
-}
+        form {
+            text-align: center;
+        }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    color: #2980b9; /* رنگ برچسب‌ها */
-}
+        label {
+            display: block;
+            margin-bottom: 10px;
+            color: #2980b9; /* رنگ برچسب‌ها */
+        }
 
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
 
-button {
-    background-color: #3498db; /* رنگ دکمه‌ها */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-}
+        button {
+            background-color: #3498db; /* رنگ دکمه‌ها */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
 
-button:hover {
-    background-color: #2980b9; /* رنگ هاور دکمه‌ها */
-}
+        button:hover {
+            background-color: #2980b9; /* رنگ هاور دکمه‌ها */
+        }
 
-.weather-info {
-    margin-top: 20px;
-    background-color: rgba(52, 152, 219, 0.2); /* پس زمینه نیمه شفاف برای اطلاعات آب و هوا */
-    padding: 15px;
-    border-radius: 5px;
-}
+        .weather-comparison {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
 
-.weather-info h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #3498db; /* رنگ عنوان اطلاعات آب و هوا */
-}
+        .city-weather {
+            background-color: rgba(52, 152, 219, 0.2); /* پس زمینه نیمه شفاف برای اطلاعات آب و هوا */
+            padding: 15px;
+            border-radius: 5px;
+            width: 45%;
+        }
 
-.weather-info p {
-    font-size: 1.2em;
-    margin-bottom: 5px;
-    color: #333; /* رنگ متن اطلاعات آب و هوا */
-}
+        .city-weather h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #3498db; /* رنگ عنوان اطلاعات آب و هوا */
+        }
 
-.error-message {
-    color: #ff3333; /* رنگ پیام خطا */
-    font-size: 1.2em;
-}
+        .city-weather p {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+            color: #333; /* رنگ متن اطلاعات آب و هوا */
+        }
+
+        .error-message {
+            color: #ff3333; /* رنگ پیام خطا */
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Comparison App</h1>
+    <form method="POST">
+        <label for="city1"><i class="fas fa-map-marker-alt"></i> Enter first city name:</label>
+        <input type="text" id="city1" name="city1" required>
+        <br>
+        <label for="city2"><i class="fas fa-map-marker-alt"></i> Enter second city name:</label>
+        <input type="text" id="city2" name="city2" required>
+        <br>
+        <button type="submit"><i class="fas fa-cloud-sun"></i> Get Weather</button>
+    </form>
+    
+    {% if weather %}
+        <div class="weather-comparison">
+            <div class="city-weather">
+                <h2>Weather in {{ weather.city1.name }}:</h2>
+                <p><i class="fas fa-cloud-sun"></i> Description: {{ weather.city1.description }}</p>
+                <p><i class="fas fa-thermometer-half"></i> Temperature: {{ weather.city1.temperature }}°C</p>
+                <p><i class="fas fa-tint"></i> Humidity: {{ weather.city1.humidity }}%</p>
+                <p><i class="fas fa-wind"></i> Wind Speed: {{ weather.city1.wind_speed }} m/s</p>
+            </div>
+            <div class="city-weather">
+                <h2>Weather in {{ weather.city2.name }}:</h2>
+                <p><i class="fas fa-cloud-sun"></i> Description: {{ weather.city2.description }}</p>
+                <p><i class="fas fa-thermometer-half"></i> Temperature: {{ weather.city2.temperature }}°C</p>
+                <p><i class="fas fa-tint"></i> Humidity: {{ weather.city2.humidity }}%</p>
+                <p><i class="fas fa-wind"></i> Wind Speed: {{ weather.city2.wind_speed }} m/s</p>
+            </div>
+        </div>
+    {% elif error %}
+        <p class="error-message"><i class="fas fa-exclamation-triangle"></i> Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
